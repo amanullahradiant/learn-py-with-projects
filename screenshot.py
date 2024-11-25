@@ -1,5 +1,7 @@
 import time
 import pyautogui
+import tkinter as tk
+
 
 def screenshot():
   # Generate a unique name based on the current timestamp
@@ -16,8 +18,6 @@ def screenshot():
 
   # Display the screenshot (optional)
   image.show()
-
-
   """
   save_path = "F:\\Aman\\screenshots\\"  # Update with your desired path
   name = f"F:/Aman/python/projects/screenshots/{name}.png"
@@ -25,4 +25,19 @@ def screenshot():
   image.save(filename)
   """
 
-screenshot()
+
+# screenshot()
+
+# Create a Tkinter window (GUI for taking screenshot)
+root = tk.Tk()
+frame = tk.Frame(root)
+frame.pack()
+
+button = tk.Button(frame, text="Take Screenshot", command=screenshot)
+
+button.pack(side=tk.LEFT)
+closeButton = tk.Button(frame, text="Close Programme", command=quit)
+
+closeButton.pack(side="right")
+
+root.mainloop()
